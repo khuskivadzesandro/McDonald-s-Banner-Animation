@@ -14,6 +14,16 @@ img {
     -webkit-user-drag: none;
 }
 
+/* helper classes */
+
+.paused {
+    animation-play-state: paused !important;
+}
+
+.running {
+    animation-play-state: running !important;
+}
+
 /* main styles */
 
 .banner {
@@ -32,13 +42,13 @@ img {
 
 .scene-1-background {
     position: absolute;
-    animation: fade-in 0.5s ease-out forwards;
+    animation: fade-in 0.5s ease-out infinite;
 }
 
 .scene-1-burger {
     position: absolute;
     transform: scale(1.03);
-    animation: burger-animation 1.2s ease-out forwards;
+    animation: burger-animation 1.2s ease-out infinite;
     animation-delay: 1s;
     opacity: 0;
     z-index: 2;
@@ -47,7 +57,7 @@ img {
 .scene-1-claim, .scene-1-logo {
     position: absolute;
     opacity: 0;
-    animation: fade-in 0.5s ease-out forwards;
+    animation: fade-in 0.5s ease-out infinite;
     animation-delay: 0.6s;
 }
 
@@ -55,11 +65,15 @@ img {
     z-index: 3;
 }
 
+.scene-1-logo {
+    z-index: 2;
+}
+
 .scene-1-headline {
     overflow: hidden;
-    animation: slide-in 0.7s linear forwards;
+    animation: slide-in 0.7s ease-out infinite;
     animation-delay: 1.5s;
-    transition: opacity 0.3s ease-out;
+    transition: opacity 0.5s ease-out;
     width: 0;
 }
 
@@ -72,8 +86,21 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    animation: fade-in 0.5s ease-out forwards;
+    animation: fade-in 0.5s ease-out infinite;
     animation-delay: 2.2s;
+    opacity: 0;
+}
+
+.scene-1-headline_overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+    animation: fade-in 0.5s ease-out infinite;
+    animation-delay: 4.2s;
+    background-color: #932122;
 }
 
 .scene-1-mcextreme_container {
@@ -85,9 +112,9 @@ img {
 
 .scene-1-x {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     transform: scale(0);
-    animation: X-animation 0.4s ease-out forwards;
+    animation: X-animation 0.4s ease-out infinite;
     animation-delay: 4.4s;
 }
 
@@ -96,14 +123,15 @@ img {
     left: 0;
     top: 0;
     opacity: 0;
-    animation: mcextreme-animation 0.8s ease-out forwards;
+    z-index: 1;
+    animation: mcextreme-animation 0.8s ease-out infinite;
     animation-delay: 4.6s;
 }
 
 .scene-1-stroerer {
     position: absolute;
     transform: scale(0);
-    animation: stroerer-animation 0.5s ease-out forwards;
+    animation: stroerer-animation 0.5s ease-out infinite;
     animation-delay: 5.5s;
     z-index: 2;
 }
@@ -129,9 +157,9 @@ img {
     outline: 70px solid #932123ab;
     border-radius: 100%;
     transform: scale(0);
-    animation: circle-animation 3.4s ease-out forwards;
+    animation: circle-animation 3.4s ease-out infinite;
     animation-delay: 6.5s;
-    z-index: 1;
+    z-index: 2;
 }
 
 .outro-circle2 {
@@ -144,8 +172,8 @@ img {
     height: 200px;
     border-radius: 100%;
     transform: scale(0);
-    animation: circle-animation 3.1s ease-out forwards;
-    animation-delay: 7.1s;
+    animation: circle-animation 2.9s ease-out infinite;
+    animation-delay: 6.8s;
     outline: 35px solid #9321235f;
     z-index: 2;
 }
@@ -157,8 +185,8 @@ img {
     border-radius: 100%;
     background-color: #932122;
     transform: scale(0);
-    animation: circle-animation 1.7s ease-out forwards;
-    animation-delay: 7.2s;
+    animation: circle-animation 1.4s ease-out infinite;
+    animation-delay: 6.9s;
     z-index: 2;
 }
 
@@ -173,8 +201,8 @@ img {
     transform: translate(-5px, 260px);
     width: 65%;
     height: 0;
-    animation: logo-animation 0.8s ease-out forwards;
-    animation-delay: 8.5s;
+    animation: logo-animation 0.8s ease-out infinite;
+    animation-delay: 8s;
     margin: 0 auto;
 }
 
@@ -190,18 +218,19 @@ img {
     height: 100%;
     opacity: 0;
     transform: translate(-30px, 390px) scale(0.75) rotate(4.8deg);
-    animation: fade-in 1s ease-out forwards;
-    animation-delay: 9.3s;
+    animation: fade-in 1s ease-out infinite;
+    animation-delay: 8.8s;
 }
 
 .scene-2-overlay {
     position: absolute;
+    z-index: 2;
     top: 0;
     width: 100%;
     height: 100%;
     opacity: 0;
-    animation: fade-in 0.5s linear forwards;
-    animation-delay: 12s;
+    animation: fade-in 0.6s ease-out infinite;
+    animation-delay: 10.5s;
     background-color: #932122;
 }
 
